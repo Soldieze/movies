@@ -6,7 +6,7 @@
 // $userDbPassword = 'dev';
 
 try {
-    $conn = new PDO('mysql:host=localhost;dbname=netflix',"dev","dev",[
+    $conn = new PDO('mysql:host=localhost;dbname=netflix',"root","",[
     PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING

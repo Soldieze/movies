@@ -37,9 +37,12 @@ function textData($valeur)
 function getMovieLimit($valeur)
 {
     global $conn;
-    $sqlRequest = "SELECT * FROM movies_full LIMIT " . $valeur;
+    $sqlRequest = "SELECT * FROM movies_full LIMIT :limite";
+
+
 
     $resultat = $conn->prepare($sqlRequest);
+    $resultat->bindValue(':limite', $valeur, PDO::PARAM_INT);
     $resultat->execute();
     return $resultat->fetchAll();
 }
